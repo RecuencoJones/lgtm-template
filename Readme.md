@@ -9,6 +9,11 @@ by [@sanographix](https://twitter.com/sanographix)
 > LGTM (Looks good to me) is the most popular comment on Github, perhaps.  
 > <http://www.lgtm.in/>
 
+# Usage
+
+![](https://31.media.tumblr.com/1d59057a678c48cd7f071275aa78623e/tumblr_inline_n205tng2381qaxsyz.jpg)
+
+
 # Sample gifanime
 
 ![](https://31.media.tumblr.com/8f3dcd77c5fcdaef5c5854dd2f1f9f81/tumblr_inline_n203hxhIyt1qaxsyz.gif)
@@ -26,7 +31,7 @@ by [@sanographix](https://twitter.com/sanographix)
 ![](https://31.media.tumblr.com/e75984ab694ff913fcb1627f689f80d7/tumblr_inline_n203gkR91V1qaxsyz.gif)
 
 
-# Usage
+# How to make LGTM gifanime
 
 - Search and save gifanime
 	- example: <http://www.tumblr.com/search/sakura+trick>
