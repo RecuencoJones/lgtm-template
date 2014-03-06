@@ -38,11 +38,13 @@ by [@sanographix](https://twitter.com/sanographix)
 - open gif & `lgtm-template.psd`
 - Select "LGTM" layer in `lgtm-template.psd`, and copy this layer to gif file.
 - Move "LGTM" layer to top of the layer panel.
+	- ![](https://31.media.tumblr.com/5a898147932a7fd8aab7ba114761b0db/tumblr_inline_n20e3kzHr51qaxsyz.png)
+
 - Use "Save for Web", and open settings window.
 - Save as `.gif`.
 - Enjoy!!!!!!!
 
-### Recommend Settings
+### Recommended Settings
 
 - Color: 64 - 128
 - Dither: 0% - 30%
