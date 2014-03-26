@@ -48,6 +48,6 @@ by [@sanographix](https://twitter.com/sanographix)
 
 - Color: 64 - 128
 - Dither: 0% - 50%
-- Deterioration: 20 - 30
+- Deterioration: 0 - 25
 
 ![](https://31.media.tumblr.com/096bbda428060793e6470b8663821ebd/tumblr_inline_n204d4whud1qaxsyz.png)
