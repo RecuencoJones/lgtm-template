@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<title>lgtm-temlate</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css" />
+
+<div class="container">
+  <div class="row" id="lgtm"></div>
+</div>
+
+<div id="modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">LGTM!</h4>
+      </div>
+      <div class="modal-body center-block" >
+        <div style="text-align: center"><img id="lgtm-image" /></div>
+
+        <div><input type="text" id="lgtm-text" class="form-control" disabled /></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#modal").on("shown.bs.modal", function(evt) {
+      $("#lgtm-text").focus().select();
+    });
+
+    $.ajax("https://api.github.com/repos/sanographix/lgtm-template/git/trees/master?recursive=1", {
+      dataType: 'jsonp'
+    }).done(function(res) {
+      var images = _.filter(res.data.tree, function(file) {
+        return file.path.match(/^gifs\/.*\.gif$/);
+      });
+      images = _.groupBy(images, function(item, i) {
+         return Math.floor(i / 4);
+      });
+
+      _.each(images, function(items) {
+          var row = $("<div>").addClass("row")
+          _.each(items, function(file) {
+            var filename = "https://raw.githubusercontent.com/sanographix/lgtm-template/master/" + file.path
+            var img = $("<img>").addClass("col-xs-3").attr("src", filename).on("click", function(evt) {
+               $("#lgtm-text").val("![LGTM](" + filename + ")");
+               $("#lgtm-image").attr("src", filename);
+               $("#modal").modal();
+            });
+            row.append(img);
+          });
+          $("#lgtm").append(row);
+      });
+    });
+  });
+</script>
