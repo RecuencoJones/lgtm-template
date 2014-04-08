@@ -30,7 +30,7 @@
       $("#lgtm-text").focus().select();
     });
 
-    $.ajax("https://api.github.com/repos/sanographix/lgtm-template/git/trees/gh-pages?recursive=1", {
+    $.ajax("https://api.github.com/repos/sanographix/lgtm-template/git/trees/master?recursive=1", {
       dataType: 'jsonp'
     }).done(function(res) {
       var images = _.filter(res.data.tree, function(file) {
@@ -43,7 +43,7 @@
       _.each(images, function(items) {
           var row = $("<div>").addClass("row")
           _.each(items, function(file) {
-            var filename = "https://sanographix.github.io/lgtm-template/" + file.path
+            var filename = "https://raw.githubusercontent.com/sanographix/lgtm-template/master/" + file.path
             var img = $("<img>").addClass("col-xs-3").attr("src", filename).on("click", function(evt) {
                $("#lgtm-text").val("![LGTM](" + filename + ")");
                $("#lgtm-image").attr("src", filename);
